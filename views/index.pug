@@ -1,0 +1,280 @@
+extends layout
+
+block content
+    aside#sidebar
+        a.logo(href='#')
+            img(src='img/logo.png', alt='logo')
+
+        #menu
+            ul
+                li
+                    a(href='index.html')
+                        .fs1(aria-hidden='true', data-icon='')
+                        span Dashboard
+                li
+                    a(href='graphs.html')
+                        .fs1(aria-hidden='true', data-icon='')
+                        span Graphs
+                li.has-sub
+                    a(href='#')
+                        .fs1(aria-hidden='true', data-icon='')
+                        span Ui Elements
+                    ul
+                        li
+                            a(href='panels.html')
+                                span Panel & List Groups
+                        li
+                            a(href='buttons.html')
+                                span Buttons
+                        li
+                            a(href='grid.html')
+                                span Grid
+                        li
+                            a(href='ui-elements.html')
+                                span More
+                
+    
+    .dashboard-wrapper
+        header
+            ul#left-nav.pull-left
+                li.hidden-lg.hidden-md.hidden-sm
+                    .logo-mob.clearfix
+                        h2
+                            .fs1(aria-hidden='true', data-icon='')
+                            span Cloud Admin
+                li
+                    .custom-search.hidden-sm.hidden-xs.pull-left
+                        input.search-query(type='text', placeholder='Search here')
+                        i.fa.fa-search
+            .pull-right
+                ul#mini-nav.clearfix
+                    li.list-box.hidden-xs
+                        a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+                            .fs1(aria-hidden='true', data-icon='')
+                        span.info-label.red-bg.animated.rubberBand 7
+                        ul.dropdown-menu.flipInX.animated.messages
+                            li.dropdown-header You have 7 messages
+                            li
+                                .icon
+                                    img(src='img/admin10.png', alt='Browser')
+                                .details
+                                    strong.text-danger Willams
+                                    span Firefox is a free, open-source web browser from Mozilla.
+                            li
+                                .icon
+                                    img(src='img/admin6.png', alt='Browser')
+                                .details
+                                    strong.text-info Sunny
+                                    span Internet Explorer is a free web browser from Microsoft.
+                            li
+                                .icon
+                                    img(src='img/admin3.png', alt='Browser')
+                                .details
+                                    strong.text-info James
+                                    span Safari is known for its sleek design and ease of use.
+                    li.list-box.hidden-xs
+                        a#drop2.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+                            .fs1(aria-hidden='true', data-icon='')
+                        span.info-label.blue-bg.animated.rubberBand 3
+                        ul.dropdown-menu.fadeInUp.animated.messages
+                            <li class="dropdown-header">Recent Chat</li>
+                            .chats.clearfix
+                                p.chat.them James, I'm going to be a little late.
+                                p.chat.me S'Okay, Dude. You know your lines...?
+                                p.chat.them I know em, I don't know what order they come in...
+                                p.chat.me We'll work it out...
+                    
+
+                    li.list-box.hidden-xs.dropdown
+                        a#drop3.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+                            .fs1(aria-hidden='true', data-icon='')
+                        span.info-label.green-bg.animated.rubberBand 6
+                        ul.flipInX.animated.dropdown-menu.stats-widget.clearfix
+                            li
+                                h5.text-success $37895
+                                p
+                                    | Revenue
+                                    span.text-success +2%
+                                .progress.progress-xs
+                                    .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                                        span.sr-only 40% Complete (success)
+                            li
+                                h5.text-info 47,892
+                                p
+                                    | Downloads 
+                                    span.text-info +39%
+                                .progress.progress-xs
+                                    .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                                        span.sr-only 40% Complete (info)
+                            li
+                                h5.text-danger 28214
+                                p
+                                    | Uploads 
+                                    span.text-danger -7%
+                                .progress.progress-xs
+                                    .progress-bar.progress-bar-danger(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                                    span.sr-only 40% Complete (danger)
+
+                    li.list-box.hidden-xs.dropdown
+                        a#drop1.dropdown-toggle.current-user(href='#', role='button', data-toggle='dropdown')
+                            | Sandy 
+                            b.caret
+                        ul.dropdown-menu.sm.fadeInUp.animated.messages
+                            li.dropdown-content
+                                a(href='#') Edit Profile
+                                a(href='#') Change Password
+                                a(href='#') Settings
+                                a(href='login.html') Logout
+
+                    li#mob-nav.list-box.hidden-lg.hidden-md.hidden-sm
+                        a(href='#')
+                            i.fa.fa-reorder
+
+        .sb-slidebar.sb-right.sb-close
+            section.user-profile
+                .profile-container
+                    img.user-img(src='img/admin1.png', alt='User Image')
+                    .desc
+                        h4 John Doe
+                        p.text-info UX Designer
+                ul.ftr-link
+                    li
+                        a(href='javascript:;')
+                        .fs1(aria-hidden='true', data-icon='')
+                            | 985
+                    li
+                        a(href='javascript:;')
+                        .fs1(aria-hidden='true', data-icon='')
+                            |  999
+                    li
+                        a(href='javascript:;')
+                        .fs1(aria-hidden='true', data-icon='')
+                            |  143
+
+            .block
+                .heading Users Online
+                .wrapper
+                    ul.online-users
+                        li
+                            a(href='', data-lastname='Sandhya', data-status='online', data-original-title='')
+                                span Sunny
+                                .user-status.online
+                        li
+                            a(href='', data-lastname='Sandhya', data-status='online', data-original-title='')
+                                span Henrik
+                                .user-status.online
+                        li
+                            a(href='', data-lastname='Sandhya', data-status='online', data-original-title='')
+                                span John Doe
+                                .user-status.busy
+                        li
+                            a(href='', data-lastname='Sandhya', data-status='online', data-original-title='')
+                                span Fleming
+                                .user-status.away
+                        li
+                            a(href='', data-lastname='Sandhya', data-status='online', data-original-title='')
+                                span Wills
+                                .user-status
+            
+            .block
+                .heading Checkout
+                ul.cart
+                    li.cart-item
+                        span.cart-item-pic
+                            img(src='img/admin2.png', alt='EarthSquare')
+                        | Item #1
+                        span.cart-item-desc Description
+                        span.cart-item-price $16.80
+                    li.cart-item
+                        span.cart-item-pic
+                            img(src='img/admin4.png', alt='EarthSquare')
+                        | Item #2
+                        span.cart-item-desc Description
+                        span.cart-item-price $15.00
+                    li.cart-item
+                        span.cart-item-pic
+                            img(src='img/admin8.png', alt='EarthSquare')
+                        | Item #3
+                        span.cart-item-desc Description
+                        span.cart-item-price $23.00
+                .cart-bottom
+                    | Total: $54.80
+                    a.cart-button(href='#') Continue
+
+            .block
+                .heading Notifications
+                // Notifications
+                ul.infos
+                    li
+                        span.label.label-success.pull-left
+                            .fs1(aria-hidden='true', data-icon='')
+                        .info
+                            h6 Guru Tweeted
+                            p.designation Few seconds ago
+                    li
+                        span.label.label-danger.pull-left
+                            .fs1(aria-hidden='true', data-icon='')
+                        .info
+                            h6 Server #999 Crashed
+                            p.designation 2 minutes ago
+                    li
+                        span.label.label-info.pull-left
+                            .fs1(aria-hidden='true', data-icon='')
+                        .info
+                            h6 Kiri's account was created
+                            p.designation 5 days ago
+        
+        .main-container
+            .top-bar.clearfix
+                .page-title
+                    h4
+                        .fs1(aria-hidden='true', data-icon='')
+                        | Default Layout 
+                        a.samll(href='invoice.html') Bonus Pages
+                ul#mini-nav-right.right-stats.hidden-xs
+                    li.reportrange.btn.btn-success
+                        i.fa.fa-calendar
+                        span September 22, 2019 - October 21, 2019
+                        b.caret
+                    li
+                        a.btn.btn-info.sb-open-right.sb-close(href='#')
+                            .fs1(aria-hidden='true', data-icon='')
+            .container-fluid
+                // Spacer starts
+                .spacer-xs
+                // Spacer ends
+
+        footer
+            | Copyright Cloud Admin 
+            span 2015
+            | . All Rights Reserved.
+
+
+        // jQuery (necessary for Bootstrap's JavaScript plugins)
+        script(src='js/jquery.js')
+        // Include all compiled plugins (below), or include individual files as needed
+        script(src='js/bootstrap.min.js')
+        // Animated Right Sidebar
+        script(src='js/slidebars.js')
+        // Date Range
+        script(src='js/daterange/moment.js')
+        script(src='js/daterange/daterangepicker.js')
+        // Custom JS
+        script(src='js/custom.js')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
