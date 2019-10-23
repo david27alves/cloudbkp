@@ -2,12 +2,12 @@ extends layout
 
 block content
     aside#sidebar
-        a.logo(href='#')
+        a.logo(href='/')
             img(src='img/logo.png', alt='logo')
 
         #menu
             ul
-                li.active
+                li
                     a(href='/')
                         .fs1(aria-hidden='true', data-icon='')
                         span Dashboard
@@ -15,7 +15,7 @@ block content
                     a(href='graphs.html')
                         .fs1(aria-hidden='true', data-icon='')
                         span Agendamento
-                li
+                li.active
                     a(href='/configuracao')
                         .fs1(aria-hidden='true', data-icon='')
                         span Configurações
@@ -116,12 +116,76 @@ block content
                 .page-title
                     h4
                         .fs1(aria-hidden='true', data-icon='')
-                        | Dashboard 
-                        a.samll(href='invoice.html') Informações do sistema
+                        | Configurações 
+                        a.samll(href='invoice.html') Parametrizações do sistema
+            
+            .container-fluid
+                // Spacer starts
+                .spacer-xs
+                    .row.no-gutter
+                        .col-md-12.col-sm-6.col-xs-12
+                            .panel.panel-default
+                                .panel-heading
+                                    h4 Conexão com o banco de dados
+                                    ul.links
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-list
+                                .panel-body
+                                    form.form-horizontal.row-border(action='#')
+                                        .form-group
+                                            label.col-md-2.control-label Banco de dados
+                                            .col-md-10
+                                                select.form-control
+                                                    option Postgres
+                                                    option SQL Server
+                                                    option MySQL
+                                                    option Oracle Database
+                                                    option Firebird
+                                        .form-group
+                                            label.col-md-2.control-label IP do servidor
+                                            .col-md-10
+                                                input.form-control(type='text', name='regular')
+                                            
+                                        .form-group
+                                            label.col-md-2.control-label Porta
+                                            .col-md-10
+                                                input.form-control(type='text', name='regular')
+                                        
+                                        .form-group
+                                            label.col-md-2.control-label Usuário
+                                            .col-md-10
+                                                input.form-control(type='text', name='regular')
+                                        
+                                        .form-group
+                                            label.col-md-2.control-label Senha
+                                            .col-md-10
+                                                input.form-control(type='text', name='regular')
+                                        
+                                        .form-group
+                                            label.col-md-2.control-label Local de backup
+                                            .col-md-10
+                                                input.form-control(type='text', name='regular')
+
+                                        .form-group(style='margin-bottom: 0px;')
+                                            .col-sm-offset-2.col-sm-6
+                                                .col-md-4
+                                                    button.btn.btn-success(type='submit') Salvar
+                                                .col-md-4
+                                                    button.btn.btn-warning(type='submit') Testar conexão
+
+    
+
+
+                // Spacer ends
+                    
+            
 
         footer
             | UPBackup 
             span VR Fortaleza
+            
+
 
         // jQuery (necessary for Bootstrap's JavaScript plugins)
         script(src='js/jquery.js')
