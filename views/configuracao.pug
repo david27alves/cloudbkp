@@ -12,7 +12,7 @@ block content
                         .fs1(aria-hidden='true', data-icon='')
                         span Dashboard
                 li
-                    a(href='graphs.html')
+                    a(href='/agendamento')
                         .fs1(aria-hidden='true', data-icon='')
                         span Agendamento
                 li.active
@@ -122,6 +122,22 @@ block content
             .container-fluid
                 // Spacer starts
                 .spacer-xs
+
+                    .alert.alert-block.alert-success.fade.in
+                        button.close(data-dismiss='alert', type='button', data-original-title='')
+                            | x
+                        p
+                            i.fa.fa-exclamation-triangle
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Conectado com sucesso.
+
+                    .alert.alert-block.alert-danger.fade.in
+                        button.close(data-dismiss='alert', type='button', data-original-title='')
+                            | x
+                        p
+                            i.fa.fa-exclamation-triangle
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Não foi possível estabelecer uma conexão com o banco de dados.
+
+
                     .row.no-gutter
                         .col-md-12.col-sm-6.col-xs-12
                             .panel.panel-default
@@ -138,10 +154,7 @@ block content
                                             .col-md-10
                                                 select.form-control
                                                     option Postgres
-                                                    option SQL Server
-                                                    option MySQL
-                                                    option Oracle Database
-                                                    option Firebird
+                                                    
                                         .form-group
                                             label.col-md-2.control-label IP do servidor
                                             .col-md-10
