@@ -27,6 +27,40 @@ html
 			script(src='js/html5shiv.js')
 			script(src='js/respond.min.js')
 	body
+		aside#sidebar
+			a.logo(href='/')
+				img(src='img/logo.png', alt='logo')
+
+			#menu
+				ul
+					li
+						a(href='/')
+							.fs1(aria-hidden='true', data-icon='')
+							span Dashboard
+					li
+						a(href='/agendamento')
+							.fs1(aria-hidden='true', data-icon='')
+							span Agendamento
+					li
+						a(href='/configuracao')
+							.fs1(aria-hidden='true', data-icon='')
+							span Configurações
+			
+			
 		block content
 
-		block sidebar
+		
+		
+
+
+	// jQuery (necessary for Bootstrap's JavaScript plugins)
+	script(src='js/jquery.js')
+	// Include all compiled plugins (below), or include individual files as needed
+	script(src='js/bootstrap.min.js')
+	// Animated Right Sidebar
+	script(src='js/slidebars.js')
+	// Date Range
+	script(src='js/daterange/moment.js')
+	script(src='js/daterange/daterangepicker.js')
+	// Custom JS
+	script(src='js/custom.js')

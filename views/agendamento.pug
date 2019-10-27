@@ -1,4 +1,39 @@
 extends layout
 
 block content
-    h5 Agendamento
+    
+    .dashboard-wrapper
+        header
+            ul#left-nav.pull-left
+                li.hidden-lg.hidden-md.hidden-sm
+                    .logo-mob.clearfix
+                        h2
+                            .fs1(aria-hidden='true', data-icon='')
+                            span UPBackup
+                
+            .pull-right
+                ul#mini-nav.clearfix
+                    li.list-box.hidden-xs.dropdown
+                        a#drop1.dropdown-toggle.current-user(href='#', role='button', data-toggle='dropdown')
+                            | Administrator 
+                            b.caret
+                        ul.dropdown-menu.sm.fadeInUp.animated.messages
+                            li.dropdown-content
+                                a(href='#') Licenciamento
+                                a(href='/login') Sair
+
+                    li#mob-nav.list-box.hidden-lg.hidden-md.hidden-sm
+                        a(href='#')
+                            i.fa.fa-reorder     
+        
+        .main-container
+            .top-bar.clearfix
+                .page-title
+                    h4
+                        .fs1(aria-hidden='true', data-icon='')
+                        | Agendamento 
+                        a.samll(href='invoice.html') Configurações de backup
+
+        footer
+            | UPBackup 
+            span VR Fortaleza
