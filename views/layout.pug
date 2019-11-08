@@ -22,6 +22,10 @@ html
 		link(href='fonts/font-awesome.min.css', rel='stylesheet')
 		// Metrize Fonts
 		link(href='fonts/metrize.css', rel='stylesheet')
+		//sweet alert
+		link(href='css/sweet-alert/notifications.css', rel='stylesheet')
+		link(href='css/sweet-alert/ie9.css', rel='stylesheet')
+		link(href='css/sweet-alert/sweet-alert.css', rel='stylesheet')
 		// HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries
 		//if lt IE 9
 			script(src='js/html5shiv.js')
@@ -33,18 +37,36 @@ html
 
 			#menu
 				ul
-					li
-						a(href='/')
-							.fs1(aria-hidden='true', data-icon='')
-							span Dashboard
-					li
-						a(href='/agendamento')
-							.fs1(aria-hidden='true', data-icon='')
-							span Agendamento
-					li
-						a(href='/configuracao')
-							.fs1(aria-hidden='true', data-icon='')
-							span Configurações
+					if dash
+						li.active
+							a(href='/')
+								.fs1(aria-hidden='true', data-icon='')
+								span Dashboard
+					else
+						li
+							a(href='/')
+								.fs1(aria-hidden='true', data-icon='')
+								span Dashboard
+					if agen
+						li.active
+							a(href='/agendamento')
+								.fs1(aria-hidden='true', data-icon='')
+								span Agendamento
+					else
+						li
+							a(href='/agendamento')
+								.fs1(aria-hidden='true', data-icon='')
+								span Agendamento
+					if conf
+						li.active
+							a(href='/configuracao')
+								.fs1(aria-hidden='true', data-icon='')
+								span Configurações
+					else
+						li
+							a(href='/configuracao')
+								.fs1(aria-hidden='true', data-icon='')
+								span Configurações
 			
 			
 		block content
@@ -64,3 +86,5 @@ html
 	script(src='js/daterange/daterangepicker.js')
 	// Custom JS
 	script(src='js/custom.js')
+	script(src='js/scripts.js')
+	script(src='js/sweet-alert.min.js')

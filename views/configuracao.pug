@@ -33,25 +33,28 @@ block content
                     h4
                         .fs1(aria-hidden='true', data-icon='')
                         | Configurações 
-                        a.samll(href='invoice.html') Parametrizações do sistema
+                        a.samll Parametrizações do sistema
             
             .container-fluid
                 // Spacer starts
                 .spacer-xs
 
-                    .alert.alert-block.alert-success.fade.in
-                        button.close(data-dismiss='alert', type='button', data-original-title='')
-                            | x
-                        p
-                            i.fa.fa-exclamation-triangle
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Conectado com sucesso.
+                    case conectado 
+                        when 1
+                            .alert.alert-block.alert-success.fade.in
+                                button.close(data-dismiss='alert', type='button', data-original-title='')
+                                    | x
+                                p
+                                    i.fa.fa-exclamation-triangle
+                                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Conectado com sucesso.
+                        when 0 
+                            .alert.alert-block.alert-danger.fade.in
+                                button.close(data-dismiss='alert', type='button', data-original-title='')
+                                    | x
+                                p
+                                    i.fa.fa-exclamation-triangle
+                                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Não foi possível estabelecer uma conexão com o banco de dados.
 
-                    .alert.alert-block.alert-danger.fade.in
-                        button.close(data-dismiss='alert', type='button', data-original-title='')
-                            | x
-                        p
-                            i.fa.fa-exclamation-triangle
-                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Não foi possível estabelecer uma conexão com o banco de dados.
 
 
                     .row.no-gutter
@@ -64,7 +67,7 @@ block content
                                             a(href='#')
                                                 i.fa.fa-list
                                 .panel-body
-                                    form.form-horizontal.row-border(action='#')
+                                    form.form-horizontal.row-border#dadosBanco(action='/configuracao', method='post')
                                         .form-group
                                             label.col-md-2.control-label Banco de dados
                                             .col-md-10
@@ -101,14 +104,9 @@ block content
                                                 .col-md-4
                                                     button.btn.btn-success(type='submit') Salvar
                                                 .col-md-4
-                                                    button.btn.btn-warning(type='submit') Testar conexão
-
-    
-
+                                                    button.btn.btn-warning#testeConexao(type='submit') Testar conexão
 
                 // Spacer ends
-                    
-            
 
         footer
             | UPBackup 
