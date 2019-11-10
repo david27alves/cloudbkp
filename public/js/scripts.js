@@ -1,10 +1,16 @@
 let testeConexao = document.getElementById('testeConexao');
 
 testeConexao.addEventListener('click', function() {
+    var conectado = false;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        swal("Sucesso!", "Conexão estabelecida!", "success");
+        if (conectado == true) {
+            swal("Sucesso!", "Conexão estabelecida!", "success");
+        } else {
+            swal("Erro!!", "Não foi possível estabelecer conexão!", "error");
+        }
+        
       }
     };
     xhttp.open("POST", "/configuracao", true);
