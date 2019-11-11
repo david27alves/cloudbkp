@@ -466,7 +466,8 @@ ul#mini-nav {
 .main-container {
   position: relative;
   padding: 0;
-  min-height: 760px; }
+  /*min-height: 100%;*/ 
+}
 
 aside#sidebar {
   position: absolute;
@@ -718,9 +719,12 @@ footer {
   text-align: left;
   font-size: 11px;
   width: 100%;
-  padding: 0 20px; }
-  footer span {
-    color: #f56b6b; }
+  padding: 0 20px; 
+}
+
+footer span {
+    color: #f56b6b; 
+}
 
 .daily-stats h1.number {
   text-align: right;

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-	res.render('configuracao', { title: 'Configuração', conf: true, conectado: true });
+	res.render('configuracao', { title: 'Configuração', conf: true });
 });
 
 router.post('/', function(req, res) {
