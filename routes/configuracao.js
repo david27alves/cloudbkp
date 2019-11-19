@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
 	var conBD = false;
 	console.log("Não conectou");
-	res.redirect('/configuracao');
+	res.redirect('/configuracao?co=1');
 });
 
 module.exports = router;
