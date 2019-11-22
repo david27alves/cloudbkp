@@ -1,9 +1,8 @@
-var express = require('express');
 
 let testeConexao = document.getElementById('testeConexao');
 
 testeConexao.addEventListener('click', function() {
-
+    
     var conectado = true;
     var xhttp = new XMLHttpRequest();
     var url = "/configuracao";
@@ -17,7 +16,7 @@ testeConexao.addEventListener('click', function() {
                 
                 swal("Sucesso!", "Conectado com sucesso", "success");
             } else {
-                swal("Erro!", "Não foi possível estabelecer conexão!", "error");
+                swal("Erro!", "Falha na conexão", "error");
             }
         }
 

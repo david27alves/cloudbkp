@@ -3,12 +3,14 @@ var { Client } = require('pg');
 
 var router = express.Router();
 
+var connBD = false;
+
 router.get('/', function(req, res, next) {
 	res.render('configuracao', { title: 'Configuração', conf: true });
 });
 
-router.post('/', function(req, res) {
-	
+router.post('/', function(req, res, next) {
+	console.log(req.body.ip)
 	const client = new Client({
 		user: 'postgres',
 		host: '127.0.0.1',
@@ -18,7 +20,7 @@ router.post('/', function(req, res) {
 	});
 	client.connect();
 
-	client.query('select * from loja', (err, res) => {
+	client.query("select pg_size_pretty(pg_database_size('dapraca'))", (err, res) => {
 
 		if (res) {
 			console.log('Conectou');
@@ -27,8 +29,10 @@ router.post('/', function(req, res) {
 		}
 		
 		client.end();
-	})
+	});
+
 	res.redirect('/configuracao');
+	
 
 });
 
